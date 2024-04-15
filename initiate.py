@@ -6,7 +6,7 @@ while(ch!=5):
 	ch=int(input())
 	if(ch==1):
 		os.system("python3 add_student.py")
-		user=input("Enter the userid: ")
+		user=input("Enter User ID: ")
 		os.system("python3 create_person.py "+user)
 		os.system("python3 add_person_faces.py "+user)
 	if(ch==2):

@@ -18,18 +18,18 @@ def insertOrUpdate(Id, Name, roll) :                                            
         connect.execute("UPDATE Students SET Name = ? WHERE ID = ?",(Name, Id))
         connect.execute("UPDATE Students SET Roll = ? WHERE ID = ?",(roll, Id))
     else:
-    	params = (Id, Name, roll)                                               # insering a new student data
-    	connect.execute("INSERT INTO Students(ID, Name, Roll) VALUES(?, ?, ?)", params)
-    connect.commit()                                                            # commiting into the database
-    connect.close()                                                             # closing the connection
+        params = (Id, Name, roll)                                               # insering a new student data
+        connect.execute("INSERT INTO Students(ID, Name, Roll) VALUES(?, ?, ?)", params)
+        connect.commit()                                                            # commiting into the database
+        connect.close()                                                             # closing the connection
 
-name = input("Enter student's name : ")
-roll = input("Enter student's Roll Number : ")
-Id = roll[-2:]
+name = input("Enter Student's Full Name : ")
+Id = input("Enter Student's ID : ")
+roll = Id
 insertOrUpdate(Id, name, roll)                                                  # calling the sqlite3 database
 
 
-folderName = "user" + Id                                                        # creating the person or user folder
+folderName = "user" + " " + Id                                                        # creating the person or user folder
 folderPath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "dataset/"+folderName)
 if not os.path.exists(folderPath):
     os.makedirs(folderPath)
