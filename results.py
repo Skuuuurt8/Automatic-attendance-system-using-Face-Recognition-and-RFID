@@ -25,11 +25,11 @@ def getDateColumn1():
 #adding the final attendance from the report
 
 wb1 = load_workbook(filename = "result.xlsx")
-sheet1 = wb1.get_sheet_by_name('Cse15')
+sheet1 = wb1.sheetnames('Cse15')
 
 
 wb2 = load_workbook(filename = "reports.xlsx")
-sheet2 = wb2.get_sheet_by_name('Cse15')
+sheet2 = wb2.sheetnames('Cse15')
 
 
 for row in range(3,60):

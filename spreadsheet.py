@@ -15,15 +15,15 @@ currentDate = time.strftime("%d_%m_%y")
 #create a workbook and add a worksheet
 if(os.path.exists('./reports.xlsx')):
     wb = load_workbook(filename = "reports.xlsx")
-    sheet = wb.get_sheet_by_name('Cse15')
+    sheet = wb.sheetnames('Cse15')
     # sheet[ord() + '1']
     for col_index in range(3,100,2):
-    	col = col_index
-    	if sheet.cell(row=1,column=col).value is None:
-    		col2 = col_index - 2
-    		if sheet.cell(row=1,column=col2).value != currentDate:
-    			sheet.cell(row=1,column=col_index).value = currentDate
-    		break
+        col = col_index
+        if sheet.cell(row=1,column=col).value is None:
+            col2 = col_index - 2
+            if sheet.cell(row=1,column=col2).value != currentDate:
+                sheet.cell(row=1,column=col_index).value = currentDate
+                break
 
     #saving the file
     wb.save(filename = "reports.xlsx")

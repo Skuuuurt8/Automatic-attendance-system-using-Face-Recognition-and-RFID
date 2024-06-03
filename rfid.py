@@ -10,7 +10,7 @@ from contextlib import contextmanager
 
 currentDate = time.strftime("%d_%m_%y")
 wb = load_workbook(filename = "reports.xlsx")
-sheet = wb.get_sheet_by_name('Cse15')
+sheet = wb.sheetnames('Cse15')
 
 attend = [0 for i in range(60)]	
 

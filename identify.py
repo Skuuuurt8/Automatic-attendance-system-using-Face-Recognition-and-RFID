@@ -14,7 +14,7 @@ CF.Key.set(Key)
 #get current date
 currentDate = time.strftime("%d_%m_%y")
 wb = load_workbook(filename = "reports.xlsx")
-sheet = wb.get_sheet_by_name('Cse15')
+sheet = wb.sheetnames('Cse15')
 
 def getDateColumn():
 	for i in range(1, 100):
